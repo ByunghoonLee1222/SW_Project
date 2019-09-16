@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.489 ns
+From           : play2[2]
+To             : \p3:led2
+From Clock     : --
+To Clock       : button1
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.067 ns
+From           : \p3:led2
+To             : rsf_led2
+From Clock     : button1
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -2.407 ns
+From           : winflag
+To             : winner~reg0
+From Clock     : --
+To Clock       : button1
+Failed Paths   : 0
+
+Type           : Clock Setup: 'button1'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 500.00 MHz ( period = 2.000 ns )
+From           : winner~reg0
+To             : winner~reg0
+From Clock     : button1
+To Clock       : button1
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

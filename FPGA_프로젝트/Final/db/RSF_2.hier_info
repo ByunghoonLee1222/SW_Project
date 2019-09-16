@@ -1,0 +1,27 @@
+|RSF_2
+gamestart => rsf_check1~reg0.ENA
+gamestart => \p3:led1.ENA
+gamestart => \p3:led2.ENA
+gamestart => winner~reg0.ENA
+gamestart => rsf_check2~reg0.ENA
+play1[0] => Equal0.IN2
+play1[1] => Equal0.IN1
+play1[2] => Equal0.IN0
+play2[0] => Equal0.IN5
+play2[1] => Equal0.IN4
+play2[2] => Equal0.IN3
+winflag => winner.OUTPUTSELECT
+button1 => rsf_check1~reg0.CLK
+button1 => rsf_check2~reg0.CLK
+button1 => winner~reg0.CLK
+button1 => \p3:led2.CLK
+button1 => \p3:led1.CLK
+rsf2_start => ~NO_FANOUT~
+clk => ~NO_FANOUT~
+rsf_check1 <= rsf_check1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rsf_check2 <= rsf_check2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rsf_led1 <= \p3:led1.DB_MAX_OUTPUT_PORT_TYPE
+rsf_led2 <= \p3:led2.DB_MAX_OUTPUT_PORT_TYPE
+winner <= winner~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

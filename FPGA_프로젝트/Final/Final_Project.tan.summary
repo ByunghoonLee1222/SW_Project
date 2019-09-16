@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.945 ns
+From           : play2[2]
+To             : RSF_1:u1|\p1:winflag1
+From Clock     : --
+To Clock       : button0
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.649 ns
+From           : RSF_1:u1|smcount
+To             : smcount
+From Clock     : button0
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -2.291 ns
+From           : play2[1]
+To             : RSF_1:u1|smcount
+From Clock     : --
+To Clock       : button0
+Failed Paths   : 0
+
+Type           : Clock Setup: 'button0'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 500.00 MHz ( period = 2.000 ns )
+From           : RSF_1:u1|\p1:winflag1
+To             : RSF_1:u1|\p1:winflag1
+From Clock     : button0
+To Clock       : button0
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

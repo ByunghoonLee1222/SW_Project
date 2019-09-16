@@ -1,0 +1,18 @@
+|counttest
+clk_count => counta[0].CLK
+clk_count => counta[1].CLK
+clk_count => counta[2].CLK
+clk_count => counta[3].CLK
+reset => counta[0].PRESET
+reset => counta[1].ACLR
+reset => counta[2].ACLR
+reset => counta[3].PRESET
+counta_dec[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+counta_dec[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+counta_dec[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+counta_dec[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+counta_dec[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+counta_dec[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+counta_dec[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

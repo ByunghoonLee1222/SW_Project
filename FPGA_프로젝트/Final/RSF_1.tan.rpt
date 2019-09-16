@@ -1,0 +1,446 @@
+Classic Timing Analyzer report for RSF_1
+Mon Jun 12 19:02:50 2017
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                          ;
++------------------------------+-------+---------------+----------------------------------+------------------+--------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From             ; To           ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+------------------+--------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 5.053 ns                         ; RSF2_count       ; counta[0]    ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 7.177 ns                         ; countSeg[2]~reg0 ; countSeg[2]  ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -2.242 ns                        ; play2[0]         ; smcount~reg0 ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 487.80 MHz ( period = 2.050 ns ) ; counta[2]        ; \p1:led1     ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                  ;              ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+------------------+--------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2S15F484C3       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; Off                ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                   ;
++-------+------------------------------------------------+--------------+------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From         ; To               ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+--------------+------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 487.80 MHz ( period = 2.050 ns )               ; counta[2]    ; smcount~reg0     ; clk        ; clk      ; None                        ; None                      ; 1.866 ns                ;
+; N/A   ; 487.80 MHz ( period = 2.050 ns )               ; counta[2]    ; rsf_check1~reg0  ; clk        ; clk      ; None                        ; None                      ; 1.866 ns                ;
+; N/A   ; 487.80 MHz ( period = 2.050 ns )               ; counta[2]    ; \p1:led1         ; clk        ; clk      ; None                        ; None                      ; 1.866 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[1]    ; smcount~reg0     ; clk        ; clk      ; None                        ; None                      ; 1.711 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[1]    ; rsf_check1~reg0  ; clk        ; clk      ; None                        ; None                      ; 1.711 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[1]    ; \p1:led1         ; clk        ; clk      ; None                        ; None                      ; 1.711 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[3]    ; smcount~reg0     ; clk        ; clk      ; None                        ; None                      ; 1.678 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[3]    ; rsf_check1~reg0  ; clk        ; clk      ; None                        ; None                      ; 1.678 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[3]    ; \p1:led1         ; clk        ; clk      ; None                        ; None                      ; 1.678 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[0]    ; smcount~reg0     ; clk        ; clk      ; None                        ; None                      ; 1.499 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[0]    ; rsf_check1~reg0  ; clk        ; clk      ; None                        ; None                      ; 1.499 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[0]    ; \p1:led1         ; clk        ; clk      ; None                        ; None                      ; 1.499 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[2]    ; \p1:winflag1     ; clk        ; clk      ; None                        ; None                      ; 1.479 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[1]    ; \p1:winflag1     ; clk        ; clk      ; None                        ; None                      ; 1.324 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[3]    ; \p1:winflag1     ; clk        ; clk      ; None                        ; None                      ; 1.291 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[0]    ; countSeg[6]~reg0 ; clk        ; clk      ; None                        ; None                      ; 1.119 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[0]    ; \p1:winflag1     ; clk        ; clk      ; None                        ; None                      ; 1.112 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[3]    ; countSeg[4]~reg0 ; clk        ; clk      ; None                        ; None                      ; 1.090 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[3]    ; countSeg[5]~reg0 ; clk        ; clk      ; None                        ; None                      ; 1.090 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[3]    ; countSeg[0]~reg0 ; clk        ; clk      ; None                        ; None                      ; 1.089 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[3]    ; countSeg[1]~reg0 ; clk        ; clk      ; None                        ; None                      ; 1.089 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[3]    ; countSeg[2]~reg0 ; clk        ; clk      ; None                        ; None                      ; 1.088 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[3]    ; countSeg[3]~reg0 ; clk        ; clk      ; None                        ; None                      ; 1.088 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[2]    ; countSeg[0]~reg0 ; clk        ; clk      ; None                        ; None                      ; 1.080 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[2]    ; countSeg[1]~reg0 ; clk        ; clk      ; None                        ; None                      ; 1.080 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[2]    ; countSeg[3]~reg0 ; clk        ; clk      ; None                        ; None                      ; 1.079 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[2]    ; countSeg[4]~reg0 ; clk        ; clk      ; None                        ; None                      ; 1.078 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[2]    ; countSeg[5]~reg0 ; clk        ; clk      ; None                        ; None                      ; 1.078 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; \p1:winflag1 ; \p1:winflag1     ; clk        ; clk      ; None                        ; None                      ; 1.068 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[0]    ; countSeg[0]~reg0 ; clk        ; clk      ; None                        ; None                      ; 0.966 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[0]    ; countSeg[2]~reg0 ; clk        ; clk      ; None                        ; None                      ; 0.965 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[0]    ; countSeg[5]~reg0 ; clk        ; clk      ; None                        ; None                      ; 0.963 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[1]    ; countSeg[6]~reg0 ; clk        ; clk      ; None                        ; None                      ; 0.963 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[3]    ; counta[1]        ; clk        ; clk      ; None                        ; None                      ; 0.943 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[0]    ; countSeg[1]~reg0 ; clk        ; clk      ; None                        ; None                      ; 0.931 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[0]    ; countSeg[3]~reg0 ; clk        ; clk      ; None                        ; None                      ; 0.930 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[0]    ; countSeg[4]~reg0 ; clk        ; clk      ; None                        ; None                      ; 0.929 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[0]    ; counta[2]        ; clk        ; clk      ; None                        ; None                      ; 0.925 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[0]    ; counta[1]        ; clk        ; clk      ; None                        ; None                      ; 0.907 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[3]    ; countSeg[6]~reg0 ; clk        ; clk      ; None                        ; None                      ; 0.892 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[2]    ; counta[3]        ; clk        ; clk      ; None                        ; None                      ; 0.885 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[1]    ; countSeg[5]~reg0 ; clk        ; clk      ; None                        ; None                      ; 0.751 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[1]    ; countSeg[0]~reg0 ; clk        ; clk      ; None                        ; None                      ; 0.750 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[1]    ; countSeg[4]~reg0 ; clk        ; clk      ; None                        ; None                      ; 0.750 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[1]    ; countSeg[1]~reg0 ; clk        ; clk      ; None                        ; None                      ; 0.749 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[1]    ; countSeg[2]~reg0 ; clk        ; clk      ; None                        ; None                      ; 0.749 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[1]    ; countSeg[3]~reg0 ; clk        ; clk      ; None                        ; None                      ; 0.748 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[2]    ; countSeg[6]~reg0 ; clk        ; clk      ; None                        ; None                      ; 0.739 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[1]    ; counta[3]        ; clk        ; clk      ; None                        ; None                      ; 0.737 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[1]    ; counta[2]        ; clk        ; clk      ; None                        ; None                      ; 0.726 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[2]    ; countSeg[2]~reg0 ; clk        ; clk      ; None                        ; None                      ; 0.696 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[2]    ; counta[1]        ; clk        ; clk      ; None                        ; None                      ; 0.539 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[2]    ; counta[2]        ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[1]    ; counta[1]        ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[3]    ; counta[3]        ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[0]    ; counta[0]        ; clk        ; clk      ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; counta[0]    ; counta[3]        ; clk        ; clk      ; None                        ; None                      ; 0.429 ns                ;
++-------+------------------------------------------------+--------------+------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------+
+; tsu                                                                          ;
++-------+--------------+------------+------------+------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From       ; To               ; To Clock ;
++-------+--------------+------------+------------+------------------+----------+
+; N/A   ; None         ; 5.053 ns   ; RSF2_count ; counta[2]        ; clk      ;
+; N/A   ; None         ; 5.053 ns   ; RSF2_count ; counta[1]        ; clk      ;
+; N/A   ; None         ; 5.053 ns   ; RSF2_count ; counta[3]        ; clk      ;
+; N/A   ; None         ; 5.053 ns   ; RSF2_count ; counta[0]        ; clk      ;
+; N/A   ; None         ; 4.960 ns   ; RSF2_count ; countSeg[0]~reg0 ; clk      ;
+; N/A   ; None         ; 4.960 ns   ; RSF2_count ; countSeg[1]~reg0 ; clk      ;
+; N/A   ; None         ; 4.960 ns   ; RSF2_count ; countSeg[2]~reg0 ; clk      ;
+; N/A   ; None         ; 4.960 ns   ; RSF2_count ; countSeg[3]~reg0 ; clk      ;
+; N/A   ; None         ; 4.960 ns   ; RSF2_count ; countSeg[4]~reg0 ; clk      ;
+; N/A   ; None         ; 4.960 ns   ; RSF2_count ; countSeg[5]~reg0 ; clk      ;
+; N/A   ; None         ; 4.960 ns   ; RSF2_count ; countSeg[6]~reg0 ; clk      ;
+; N/A   ; None         ; 4.148 ns   ; play2[1]   ; \p1:winflag1     ; clk      ;
+; N/A   ; None         ; 3.988 ns   ; play1[0]   ; \p1:winflag1     ; clk      ;
+; N/A   ; None         ; 3.882 ns   ; rsf1_start ; counta[2]        ; clk      ;
+; N/A   ; None         ; 3.882 ns   ; rsf1_start ; counta[1]        ; clk      ;
+; N/A   ; None         ; 3.882 ns   ; rsf1_start ; counta[3]        ; clk      ;
+; N/A   ; None         ; 3.882 ns   ; rsf1_start ; counta[0]        ; clk      ;
+; N/A   ; None         ; 3.874 ns   ; play1[1]   ; \p1:winflag1     ; clk      ;
+; N/A   ; None         ; 3.823 ns   ; play2[2]   ; \p1:winflag1     ; clk      ;
+; N/A   ; None         ; 3.792 ns   ; gamestart  ; smcount~reg0     ; clk      ;
+; N/A   ; None         ; 3.792 ns   ; gamestart  ; rsf_check1~reg0  ; clk      ;
+; N/A   ; None         ; 3.792 ns   ; gamestart  ; \p1:led1         ; clk      ;
+; N/A   ; None         ; 3.789 ns   ; rsf1_start ; countSeg[0]~reg0 ; clk      ;
+; N/A   ; None         ; 3.789 ns   ; rsf1_start ; countSeg[1]~reg0 ; clk      ;
+; N/A   ; None         ; 3.789 ns   ; rsf1_start ; countSeg[2]~reg0 ; clk      ;
+; N/A   ; None         ; 3.789 ns   ; rsf1_start ; countSeg[3]~reg0 ; clk      ;
+; N/A   ; None         ; 3.789 ns   ; rsf1_start ; countSeg[4]~reg0 ; clk      ;
+; N/A   ; None         ; 3.789 ns   ; rsf1_start ; countSeg[5]~reg0 ; clk      ;
+; N/A   ; None         ; 3.789 ns   ; rsf1_start ; countSeg[6]~reg0 ; clk      ;
+; N/A   ; None         ; 3.774 ns   ; rsf1_start ; smcount~reg0     ; clk      ;
+; N/A   ; None         ; 3.774 ns   ; rsf1_start ; rsf_check1~reg0  ; clk      ;
+; N/A   ; None         ; 3.774 ns   ; rsf1_start ; \p1:led1         ; clk      ;
+; N/A   ; None         ; 3.717 ns   ; gamestart  ; counta[2]        ; clk      ;
+; N/A   ; None         ; 3.717 ns   ; gamestart  ; counta[1]        ; clk      ;
+; N/A   ; None         ; 3.717 ns   ; gamestart  ; counta[3]        ; clk      ;
+; N/A   ; None         ; 3.717 ns   ; gamestart  ; counta[0]        ; clk      ;
+; N/A   ; None         ; 3.642 ns   ; play2[0]   ; \p1:winflag1     ; clk      ;
+; N/A   ; None         ; 3.624 ns   ; gamestart  ; countSeg[0]~reg0 ; clk      ;
+; N/A   ; None         ; 3.624 ns   ; gamestart  ; countSeg[1]~reg0 ; clk      ;
+; N/A   ; None         ; 3.624 ns   ; gamestart  ; countSeg[2]~reg0 ; clk      ;
+; N/A   ; None         ; 3.624 ns   ; gamestart  ; countSeg[3]~reg0 ; clk      ;
+; N/A   ; None         ; 3.624 ns   ; gamestart  ; countSeg[4]~reg0 ; clk      ;
+; N/A   ; None         ; 3.624 ns   ; gamestart  ; countSeg[5]~reg0 ; clk      ;
+; N/A   ; None         ; 3.624 ns   ; gamestart  ; countSeg[6]~reg0 ; clk      ;
+; N/A   ; None         ; 3.607 ns   ; play1[2]   ; \p1:winflag1     ; clk      ;
+; N/A   ; None         ; 3.416 ns   ; play2[1]   ; \p1:led1         ; clk      ;
+; N/A   ; None         ; 3.405 ns   ; gamestart  ; \p1:winflag1     ; clk      ;
+; N/A   ; None         ; 3.387 ns   ; rsf1_start ; \p1:winflag1     ; clk      ;
+; N/A   ; None         ; 3.378 ns   ; rsf2_start ; smcount~reg0     ; clk      ;
+; N/A   ; None         ; 3.378 ns   ; rsf2_start ; rsf_check1~reg0  ; clk      ;
+; N/A   ; None         ; 3.378 ns   ; rsf2_start ; \p1:led1         ; clk      ;
+; N/A   ; None         ; 3.280 ns   ; rsf2_start ; counta[2]        ; clk      ;
+; N/A   ; None         ; 3.280 ns   ; rsf2_start ; counta[1]        ; clk      ;
+; N/A   ; None         ; 3.280 ns   ; rsf2_start ; counta[3]        ; clk      ;
+; N/A   ; None         ; 3.280 ns   ; rsf2_start ; counta[0]        ; clk      ;
+; N/A   ; None         ; 3.187 ns   ; rsf2_start ; countSeg[0]~reg0 ; clk      ;
+; N/A   ; None         ; 3.187 ns   ; rsf2_start ; countSeg[1]~reg0 ; clk      ;
+; N/A   ; None         ; 3.187 ns   ; rsf2_start ; countSeg[2]~reg0 ; clk      ;
+; N/A   ; None         ; 3.187 ns   ; rsf2_start ; countSeg[3]~reg0 ; clk      ;
+; N/A   ; None         ; 3.187 ns   ; rsf2_start ; countSeg[4]~reg0 ; clk      ;
+; N/A   ; None         ; 3.187 ns   ; rsf2_start ; countSeg[5]~reg0 ; clk      ;
+; N/A   ; None         ; 3.187 ns   ; rsf2_start ; countSeg[6]~reg0 ; clk      ;
+; N/A   ; None         ; 3.152 ns   ; play1[0]   ; \p1:led1         ; clk      ;
+; N/A   ; None         ; 3.150 ns   ; play1[2]   ; \p1:led1         ; clk      ;
+; N/A   ; None         ; 3.138 ns   ; play2[1]   ; rsf_check1~reg0  ; clk      ;
+; N/A   ; None         ; 3.135 ns   ; play2[1]   ; smcount~reg0     ; clk      ;
+; N/A   ; None         ; 3.017 ns   ; play2[2]   ; \p1:led1         ; clk      ;
+; N/A   ; None         ; 2.991 ns   ; rsf2_start ; \p1:winflag1     ; clk      ;
+; N/A   ; None         ; 2.884 ns   ; play1[1]   ; \p1:led1         ; clk      ;
+; N/A   ; None         ; 2.883 ns   ; play1[0]   ; smcount~reg0     ; clk      ;
+; N/A   ; None         ; 2.874 ns   ; play1[0]   ; rsf_check1~reg0  ; clk      ;
+; N/A   ; None         ; 2.872 ns   ; play1[2]   ; rsf_check1~reg0  ; clk      ;
+; N/A   ; None         ; 2.866 ns   ; play1[2]   ; smcount~reg0     ; clk      ;
+; N/A   ; None         ; 2.771 ns   ; play2[0]   ; \p1:led1         ; clk      ;
+; N/A   ; None         ; 2.745 ns   ; play2[2]   ; smcount~reg0     ; clk      ;
+; N/A   ; None         ; 2.739 ns   ; play2[2]   ; rsf_check1~reg0  ; clk      ;
+; N/A   ; None         ; 2.606 ns   ; play1[1]   ; rsf_check1~reg0  ; clk      ;
+; N/A   ; None         ; 2.604 ns   ; play1[1]   ; smcount~reg0     ; clk      ;
+; N/A   ; None         ; 2.493 ns   ; play2[0]   ; rsf_check1~reg0  ; clk      ;
+; N/A   ; None         ; 2.481 ns   ; play2[0]   ; smcount~reg0     ; clk      ;
++-------+--------------+------------+------------+------------------+----------+
+
+
++---------------------------------------------------------------------------------+
+; tco                                                                             ;
++-------+--------------+------------+------------------+-------------+------------+
+; Slack ; Required tco ; Actual tco ; From             ; To          ; From Clock ;
++-------+--------------+------------+------------------+-------------+------------+
+; N/A   ; None         ; 7.177 ns   ; countSeg[2]~reg0 ; countSeg[2] ; clk        ;
+; N/A   ; None         ; 7.160 ns   ; countSeg[6]~reg0 ; countSeg[6] ; clk        ;
+; N/A   ; None         ; 6.745 ns   ; countSeg[5]~reg0 ; countSeg[5] ; clk        ;
+; N/A   ; None         ; 6.005 ns   ; countSeg[3]~reg0 ; countSeg[3] ; clk        ;
+; N/A   ; None         ; 5.956 ns   ; rsf_check1~reg0  ; rsf_check1  ; clk        ;
+; N/A   ; None         ; 5.613 ns   ; smcount~reg0     ; smcount     ; clk        ;
+; N/A   ; None         ; 5.432 ns   ; \p1:led1         ; rsf_led1    ; clk        ;
+; N/A   ; None         ; 5.388 ns   ; countSeg[0]~reg0 ; countSeg[0] ; clk        ;
+; N/A   ; None         ; 5.278 ns   ; \p1:winflag1     ; winflag     ; clk        ;
+; N/A   ; None         ; 5.061 ns   ; countSeg[1]~reg0 ; countSeg[1] ; clk        ;
+; N/A   ; None         ; 5.051 ns   ; countSeg[4]~reg0 ; countSeg[4] ; clk        ;
++-------+--------------+------------+------------------+-------------+------------+
+
+
++------------------------------------------------------------------------------------+
+; th                                                                                 ;
++---------------+-------------+-----------+------------+------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From       ; To               ; To Clock ;
++---------------+-------------+-----------+------------+------------------+----------+
+; N/A           ; None        ; -2.242 ns ; play2[0]   ; smcount~reg0     ; clk      ;
+; N/A           ; None        ; -2.254 ns ; play2[0]   ; rsf_check1~reg0  ; clk      ;
+; N/A           ; None        ; -2.365 ns ; play1[1]   ; smcount~reg0     ; clk      ;
+; N/A           ; None        ; -2.367 ns ; play1[1]   ; rsf_check1~reg0  ; clk      ;
+; N/A           ; None        ; -2.500 ns ; play2[2]   ; rsf_check1~reg0  ; clk      ;
+; N/A           ; None        ; -2.506 ns ; play2[2]   ; smcount~reg0     ; clk      ;
+; N/A           ; None        ; -2.532 ns ; play2[0]   ; \p1:led1         ; clk      ;
+; N/A           ; None        ; -2.627 ns ; play1[2]   ; smcount~reg0     ; clk      ;
+; N/A           ; None        ; -2.633 ns ; play1[2]   ; rsf_check1~reg0  ; clk      ;
+; N/A           ; None        ; -2.635 ns ; play1[0]   ; rsf_check1~reg0  ; clk      ;
+; N/A           ; None        ; -2.644 ns ; play1[0]   ; smcount~reg0     ; clk      ;
+; N/A           ; None        ; -2.645 ns ; play1[1]   ; \p1:led1         ; clk      ;
+; N/A           ; None        ; -2.752 ns ; rsf2_start ; \p1:winflag1     ; clk      ;
+; N/A           ; None        ; -2.778 ns ; play2[2]   ; \p1:led1         ; clk      ;
+; N/A           ; None        ; -2.851 ns ; play2[0]   ; \p1:winflag1     ; clk      ;
+; N/A           ; None        ; -2.896 ns ; play2[1]   ; smcount~reg0     ; clk      ;
+; N/A           ; None        ; -2.899 ns ; play2[1]   ; rsf_check1~reg0  ; clk      ;
+; N/A           ; None        ; -2.911 ns ; play1[2]   ; \p1:led1         ; clk      ;
+; N/A           ; None        ; -2.913 ns ; play1[0]   ; \p1:led1         ; clk      ;
+; N/A           ; None        ; -2.948 ns ; rsf2_start ; countSeg[0]~reg0 ; clk      ;
+; N/A           ; None        ; -2.948 ns ; rsf2_start ; countSeg[1]~reg0 ; clk      ;
+; N/A           ; None        ; -2.948 ns ; rsf2_start ; countSeg[2]~reg0 ; clk      ;
+; N/A           ; None        ; -2.948 ns ; rsf2_start ; countSeg[3]~reg0 ; clk      ;
+; N/A           ; None        ; -2.948 ns ; rsf2_start ; countSeg[4]~reg0 ; clk      ;
+; N/A           ; None        ; -2.948 ns ; rsf2_start ; countSeg[5]~reg0 ; clk      ;
+; N/A           ; None        ; -2.948 ns ; rsf2_start ; countSeg[6]~reg0 ; clk      ;
+; N/A           ; None        ; -2.974 ns ; play1[1]   ; \p1:winflag1     ; clk      ;
+; N/A           ; None        ; -3.041 ns ; rsf2_start ; counta[2]        ; clk      ;
+; N/A           ; None        ; -3.041 ns ; rsf2_start ; counta[1]        ; clk      ;
+; N/A           ; None        ; -3.041 ns ; rsf2_start ; counta[3]        ; clk      ;
+; N/A           ; None        ; -3.041 ns ; rsf2_start ; counta[0]        ; clk      ;
+; N/A           ; None        ; -3.115 ns ; play2[2]   ; \p1:winflag1     ; clk      ;
+; N/A           ; None        ; -3.139 ns ; rsf2_start ; smcount~reg0     ; clk      ;
+; N/A           ; None        ; -3.139 ns ; rsf2_start ; rsf_check1~reg0  ; clk      ;
+; N/A           ; None        ; -3.139 ns ; rsf2_start ; \p1:led1         ; clk      ;
+; N/A           ; None        ; -3.148 ns ; rsf1_start ; \p1:winflag1     ; clk      ;
+; N/A           ; None        ; -3.166 ns ; gamestart  ; \p1:winflag1     ; clk      ;
+; N/A           ; None        ; -3.177 ns ; play2[1]   ; \p1:led1         ; clk      ;
+; N/A           ; None        ; -3.226 ns ; play1[0]   ; \p1:winflag1     ; clk      ;
+; N/A           ; None        ; -3.236 ns ; play1[2]   ; \p1:winflag1     ; clk      ;
+; N/A           ; None        ; -3.385 ns ; gamestart  ; countSeg[0]~reg0 ; clk      ;
+; N/A           ; None        ; -3.385 ns ; gamestart  ; countSeg[1]~reg0 ; clk      ;
+; N/A           ; None        ; -3.385 ns ; gamestart  ; countSeg[2]~reg0 ; clk      ;
+; N/A           ; None        ; -3.385 ns ; gamestart  ; countSeg[3]~reg0 ; clk      ;
+; N/A           ; None        ; -3.385 ns ; gamestart  ; countSeg[4]~reg0 ; clk      ;
+; N/A           ; None        ; -3.385 ns ; gamestart  ; countSeg[5]~reg0 ; clk      ;
+; N/A           ; None        ; -3.385 ns ; gamestart  ; countSeg[6]~reg0 ; clk      ;
+; N/A           ; None        ; -3.478 ns ; gamestart  ; counta[2]        ; clk      ;
+; N/A           ; None        ; -3.478 ns ; gamestart  ; counta[1]        ; clk      ;
+; N/A           ; None        ; -3.478 ns ; gamestart  ; counta[3]        ; clk      ;
+; N/A           ; None        ; -3.478 ns ; gamestart  ; counta[0]        ; clk      ;
+; N/A           ; None        ; -3.505 ns ; play2[1]   ; \p1:winflag1     ; clk      ;
+; N/A           ; None        ; -3.535 ns ; rsf1_start ; smcount~reg0     ; clk      ;
+; N/A           ; None        ; -3.535 ns ; rsf1_start ; rsf_check1~reg0  ; clk      ;
+; N/A           ; None        ; -3.535 ns ; rsf1_start ; \p1:led1         ; clk      ;
+; N/A           ; None        ; -3.550 ns ; rsf1_start ; countSeg[0]~reg0 ; clk      ;
+; N/A           ; None        ; -3.550 ns ; rsf1_start ; countSeg[1]~reg0 ; clk      ;
+; N/A           ; None        ; -3.550 ns ; rsf1_start ; countSeg[2]~reg0 ; clk      ;
+; N/A           ; None        ; -3.550 ns ; rsf1_start ; countSeg[3]~reg0 ; clk      ;
+; N/A           ; None        ; -3.550 ns ; rsf1_start ; countSeg[4]~reg0 ; clk      ;
+; N/A           ; None        ; -3.550 ns ; rsf1_start ; countSeg[5]~reg0 ; clk      ;
+; N/A           ; None        ; -3.550 ns ; rsf1_start ; countSeg[6]~reg0 ; clk      ;
+; N/A           ; None        ; -3.553 ns ; gamestart  ; smcount~reg0     ; clk      ;
+; N/A           ; None        ; -3.553 ns ; gamestart  ; rsf_check1~reg0  ; clk      ;
+; N/A           ; None        ; -3.553 ns ; gamestart  ; \p1:led1         ; clk      ;
+; N/A           ; None        ; -3.643 ns ; rsf1_start ; counta[2]        ; clk      ;
+; N/A           ; None        ; -3.643 ns ; rsf1_start ; counta[1]        ; clk      ;
+; N/A           ; None        ; -3.643 ns ; rsf1_start ; counta[3]        ; clk      ;
+; N/A           ; None        ; -3.643 ns ; rsf1_start ; counta[0]        ; clk      ;
+; N/A           ; None        ; -4.721 ns ; RSF2_count ; countSeg[0]~reg0 ; clk      ;
+; N/A           ; None        ; -4.721 ns ; RSF2_count ; countSeg[1]~reg0 ; clk      ;
+; N/A           ; None        ; -4.721 ns ; RSF2_count ; countSeg[2]~reg0 ; clk      ;
+; N/A           ; None        ; -4.721 ns ; RSF2_count ; countSeg[3]~reg0 ; clk      ;
+; N/A           ; None        ; -4.721 ns ; RSF2_count ; countSeg[4]~reg0 ; clk      ;
+; N/A           ; None        ; -4.721 ns ; RSF2_count ; countSeg[5]~reg0 ; clk      ;
+; N/A           ; None        ; -4.721 ns ; RSF2_count ; countSeg[6]~reg0 ; clk      ;
+; N/A           ; None        ; -4.814 ns ; RSF2_count ; counta[2]        ; clk      ;
+; N/A           ; None        ; -4.814 ns ; RSF2_count ; counta[1]        ; clk      ;
+; N/A           ; None        ; -4.814 ns ; RSF2_count ; counta[3]        ; clk      ;
+; N/A           ; None        ; -4.814 ns ; RSF2_count ; counta[0]        ; clk      ;
++---------------+-------------+-----------+------------+------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Mon Jun 12 19:02:50 2017
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off RSF_1 -c RSF_1 --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 487.8 MHz between source register "counta[2]" and destination register "smcount~reg0" (period= 2.05 ns)
+    Info: + Longest register to register delay is 1.866 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X23_Y1_N7; Fanout = 11; REG Node = 'counta[2]'
+        Info: 2: + IC(0.276 ns) + CELL(0.366 ns) = 0.642 ns; Loc. = LCCOMB_X23_Y1_N16; Fanout = 1; COMB Node = 'Equal0~0'
+        Info: 3: + IC(0.203 ns) + CELL(0.053 ns) = 0.898 ns; Loc. = LCCOMB_X23_Y1_N28; Fanout = 4; COMB Node = 'smcount~0'
+        Info: 4: + IC(0.222 ns) + CELL(0.746 ns) = 1.866 ns; Loc. = LCFF_X23_Y1_N1; Fanout = 2; REG Node = 'smcount~reg0'
+        Info: Total cell delay = 1.165 ns ( 62.43 % )
+        Info: Total interconnect delay = 0.701 ns ( 37.57 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 2.492 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clk'
+            Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 15; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(0.677 ns) + CELL(0.618 ns) = 2.492 ns; Loc. = LCFF_X23_Y1_N1; Fanout = 2; REG Node = 'smcount~reg0'
+            Info: Total cell delay = 1.472 ns ( 59.07 % )
+            Info: Total interconnect delay = 1.020 ns ( 40.93 % )
+        Info: - Longest clock path from clock "clk" to source register is 2.492 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clk'
+            Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 15; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(0.677 ns) + CELL(0.618 ns) = 2.492 ns; Loc. = LCFF_X23_Y1_N7; Fanout = 11; REG Node = 'counta[2]'
+            Info: Total cell delay = 1.472 ns ( 59.07 % )
+            Info: Total interconnect delay = 1.020 ns ( 40.93 % )
+    Info: + Micro clock to output delay of source is 0.094 ns
+    Info: + Micro setup delay of destination is 0.090 ns
+Info: tsu for register "counta[2]" (data pin = "RSF2_count", clock pin = "clk") is 5.053 ns
+    Info: + Longest pin to register delay is 7.455 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.837 ns) = 0.837 ns; Loc. = PIN_C14; Fanout = 2; PIN Node = 'RSF2_count'
+        Info: 2: + IC(5.209 ns) + CELL(0.346 ns) = 6.392 ns; Loc. = LCCOMB_X22_Y1_N30; Fanout = 11; COMB Node = 'countSeg[0]~0'
+        Info: 3: + IC(0.317 ns) + CELL(0.746 ns) = 7.455 ns; Loc. = LCFF_X23_Y1_N7; Fanout = 11; REG Node = 'counta[2]'
+        Info: Total cell delay = 1.929 ns ( 25.88 % )
+        Info: Total interconnect delay = 5.526 ns ( 74.12 % )
+    Info: + Micro setup delay of destination is 0.090 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 2.492 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 15; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(0.677 ns) + CELL(0.618 ns) = 2.492 ns; Loc. = LCFF_X23_Y1_N7; Fanout = 11; REG Node = 'counta[2]'
+        Info: Total cell delay = 1.472 ns ( 59.07 % )
+        Info: Total interconnect delay = 1.020 ns ( 40.93 % )
+Info: tco from clock "clk" to destination pin "countSeg[2]" through register "countSeg[2]~reg0" is 7.177 ns
+    Info: + Longest clock path from clock "clk" to source register is 2.490 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 15; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(0.675 ns) + CELL(0.618 ns) = 2.490 ns; Loc. = LCFF_X22_Y1_N21; Fanout = 1; REG Node = 'countSeg[2]~reg0'
+        Info: Total cell delay = 1.472 ns ( 59.12 % )
+        Info: Total interconnect delay = 1.018 ns ( 40.88 % )
+    Info: + Micro clock to output delay of source is 0.094 ns
+    Info: + Longest register to pin delay is 4.593 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X22_Y1_N21; Fanout = 1; REG Node = 'countSeg[2]~reg0'
+        Info: 2: + IC(2.605 ns) + CELL(1.988 ns) = 4.593 ns; Loc. = PIN_D13; Fanout = 0; PIN Node = 'countSeg[2]'
+        Info: Total cell delay = 1.988 ns ( 43.28 % )
+        Info: Total interconnect delay = 2.605 ns ( 56.72 % )
+Info: th for register "smcount~reg0" (data pin = "play2[0]", clock pin = "clk") is -2.242 ns
+    Info: + Longest clock path from clock "clk" to destination register is 2.492 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 15; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(0.677 ns) + CELL(0.618 ns) = 2.492 ns; Loc. = LCFF_X23_Y1_N1; Fanout = 2; REG Node = 'smcount~reg0'
+        Info: Total cell delay = 1.472 ns ( 59.07 % )
+        Info: Total interconnect delay = 1.020 ns ( 40.93 % )
+    Info: + Micro hold delay of destination is 0.149 ns
+    Info: - Shortest pin to register delay is 4.883 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.772 ns) = 0.772 ns; Loc. = PIN_AB10; Fanout = 3; PIN Node = 'play2[0]'
+        Info: 2: + IC(3.903 ns) + CELL(0.053 ns) = 4.728 ns; Loc. = LCCOMB_X23_Y1_N0; Fanout = 4; COMB Node = 'Equal1~0'
+        Info: 3: + IC(0.000 ns) + CELL(0.155 ns) = 4.883 ns; Loc. = LCFF_X23_Y1_N1; Fanout = 2; REG Node = 'smcount~reg0'
+        Info: Total cell delay = 0.980 ns ( 20.07 % )
+        Info: Total interconnect delay = 3.903 ns ( 79.93 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 195 megabytes
+    Info: Processing ended: Mon Jun 12 19:02:51 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+

@@ -1,0 +1,31 @@
+|winflag_test
+play1[0] => Equal0.IN2
+play1[0] => Mux3.IN5
+play1[1] => Equal0.IN1
+play1[1] => Mux3.IN4
+play1[2] => Equal0.IN0
+play1[2] => Mux3.IN3
+play2[0] => Equal0.IN5
+play2[0] => Mux0.IN10
+play2[0] => Mux1.IN10
+play2[0] => Mux2.IN10
+play2[1] => Equal0.IN4
+play2[1] => Mux0.IN9
+play2[1] => Mux1.IN9
+play2[1] => Mux2.IN9
+play2[2] => Equal0.IN3
+play2[2] => Mux0.IN8
+play2[2] => Mux1.IN8
+play2[2] => Mux2.IN8
+clk => ~NO_FANOUT~
+SEGcount[0] <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+SEGcount[1] <= SEGcount[1]~5.DB_MAX_OUTPUT_PORT_TYPE
+SEGcount[2] <= SEGcount[2]~4.DB_MAX_OUTPUT_PORT_TYPE
+SEGcount[3] <= SEGcount[3]~3.DB_MAX_OUTPUT_PORT_TYPE
+SEGcount[4] <= SEGcount[4]~2.DB_MAX_OUTPUT_PORT_TYPE
+SEGcount[5] <= SEGcount[5]~1.DB_MAX_OUTPUT_PORT_TYPE
+SEGcount[6] <= SEGcount[6]~0.DB_MAX_OUTPUT_PORT_TYPE
+smcount <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+winflag <= winflag~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

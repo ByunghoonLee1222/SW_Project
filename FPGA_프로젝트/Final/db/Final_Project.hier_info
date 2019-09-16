@@ -1,0 +1,51 @@
+|Final_Project
+play1[0] => RSF_1:u1.play1[0]
+play1[1] => RSF_1:u1.play1[1]
+play1[2] => RSF_1:u1.play1[2]
+play2[0] => RSF_1:u1.play2[0]
+play2[1] => RSF_1:u1.play2[1]
+play2[2] => RSF_1:u1.play2[2]
+clk => RSF_1:u1.clk
+button0 => RSF_1:u1.button0
+button1 => ~NO_FANOUT~
+rsf_led1 <= RSF_1:u1.rsf_led1
+rsf_led2 <= rsf_led2~0.DB_MAX_OUTPUT_PORT_TYPE
+smcount <= RSF_1:u1.smcount
+winflag <= RSF_1:u1.winflag
+winner <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Final_Project|RSF_1:u1
+play1[0] => Equal0.IN2
+play1[0] => Mux3.IN5
+play1[0] => Mux4.IN10
+play1[1] => Equal0.IN1
+play1[1] => Mux3.IN4
+play1[1] => Mux4.IN9
+play1[2] => Equal0.IN0
+play1[2] => Mux3.IN3
+play1[2] => Mux4.IN8
+play2[0] => Equal0.IN5
+play2[0] => Mux0.IN10
+play2[0] => Mux1.IN10
+play2[0] => Mux2.IN10
+play2[1] => Equal0.IN4
+play2[1] => Mux0.IN9
+play2[1] => Mux1.IN9
+play2[1] => Mux2.IN9
+play2[2] => Equal0.IN3
+play2[2] => Mux0.IN8
+play2[2] => Mux1.IN8
+play2[2] => Mux2.IN8
+rsf1_start => ~NO_FANOUT~
+button0 => rsf_check1~reg0.CLK
+button0 => smcount~reg0.CLK
+button0 => \p1:winflag1.CLK
+button0 => \p1:led1.CLK
+clk => ~NO_FANOUT~
+smcount <= smcount~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rsf_check1 <= rsf_check1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rsf_led1 <= \p1:led1.DB_MAX_OUTPUT_PORT_TYPE
+winflag <= \p1:winflag1.DB_MAX_OUTPUT_PORT_TYPE
+
+
